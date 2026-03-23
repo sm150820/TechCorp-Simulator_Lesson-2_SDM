@@ -1,6 +1,6 @@
 package com.example.techcorp;
 
-public abstract class Employee {
+public abstract class Employee implements Workable {
 
     private String name;
     private int skill;
@@ -12,19 +12,13 @@ public abstract class Employee {
         this.salary = salary;
     }
 
+    @Override
     public abstract int work();
 
+    // no @Override here (not in an interface/superclass)
     public abstract String getRoleName();
 
-    public String getName() {
-        return name;
-    }
-
-    public int getSkill() {
-        return skill;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
+    public String getName() { return name; }
+    public int getSkill() { return skill; }
+    public double getSalary() { return salary; }
 }
